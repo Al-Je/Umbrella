@@ -21,9 +21,13 @@ enum Api {
         static let apiKey = "appid"
     }
     
-    enum icon {
-        static let path = "http://openweathermap.org/img/wn/"
+    enum Icon {
+        static let path = "https://openweathermap.org/img/wn/"
         static let exten = "@2x.png"
+        
+        static func url(name: String) -> URL? {
+            return URL(string: path + name + exten)
+        }
     }
     
     static func generateWeatherUrl() throws -> URL? {

@@ -1,5 +1,5 @@
 //
-//  DayCellView.swift
+//  HourCellView.swift
 //  Umbrella
 //
 //  Created by Alexandre Jegouic on 06/03/2022.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct DayCellView: View {
-    let model: DayCellViewModel
+struct HourCellView: View {
+    let model: HourCellViewModel
     
     var body: some View {
         return HStack {
-            AsyncImage(url: URL(string: model.imageURl)) { image in
+            AsyncImage(url: model.imageURl) { image in
                 image.resizable()
             } placeholder: {
-                ProgressView()
+                Image("AppLogo").resizable()
             }
             .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
@@ -30,9 +30,9 @@ struct DayCellView: View {
 
 struct DayCellView_Previews: PreviewProvider {
     static var previews: some View {
-        DayCellView(
-            model: DayCellViewModel(
-                imageURl: "",
+        HourCellView(
+            model: HourCellViewModel(
+                imageURl: URL(string: ""),
                 title: "title",
                 subtitle: "subtitle"
             )

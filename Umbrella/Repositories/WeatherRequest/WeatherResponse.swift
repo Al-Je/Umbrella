@@ -12,7 +12,7 @@ struct WeatherResponse: Codable {
 }
 
 struct WeatherData: Codable {
-    let dt: Int
+    let dt: TimeInterval
     let temp: Double
     let pressure: Double
     let weather: [WeatherDescription]

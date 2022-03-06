@@ -1,13 +1,13 @@
 //
-//  DaysListViewState.swift
+//  HourlyListViewState.swift
 //  Umbrella
 //
 //  Created by Alexandre Jegouic on 06/03/2022.
 //
 
-enum DaysListViewState {
+enum HourlyListViewState {
     case idle
     case loading
     case error(Error)
-    case show(items: [DayCellViewModel])
+    case show(items: [HourCellViewModel])
 }

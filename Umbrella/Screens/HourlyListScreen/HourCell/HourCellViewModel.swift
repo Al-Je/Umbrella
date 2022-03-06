@@ -1,5 +1,5 @@
 //
-//  DayCellViewModel.swift
+//  HourCellViewModel.swift
 //  Umbrella
 //
 //  Created by Alexandre Jegouic on 06/03/2022.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct DayCellViewModel: Identifiable {
+struct HourCellViewModel: Identifiable {
     let id = UUID()
-    let imageURl: String
+    let imageURl: URL?
     let title: String
     let subtitle: String
 }

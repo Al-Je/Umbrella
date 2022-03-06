@@ -12,7 +12,7 @@ struct UmbrellaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            // DaysListView()
+            ScreensInjection.generateDaysListView()
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  HourlyListView.swift
 //  Umbrella
 //
 //  Created by Alexandre Jegouic on 06/03/2022.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-
-
-struct DaysListView<T>: View where T: DaysListPresenter {
+struct HourlyListView<T>: View where T: HourlyListPresenter {
     @ObservedObject private var presenter: T
     
     init(presenter: T) {
@@ -26,21 +24,32 @@ struct DaysListView<T>: View where T: DaysListPresenter {
                 
             case .loading:
                 ProgressView()
+                    .navigationBarTitle("Loadings")
+                    .tint(.accentColor)
                 
             case .error(let error):
-                Text(error.localizedDescription)
+                VStack(alignment: .leading) {
+                    Image(systemName: "arrow.clockwise")
+                    Text(error.localizedDescription)
+                }.onTapGesture {
+                    presenter.load()
+                }
                 
             case .show(let items):
                 List(items) { day in
-                    DayCellView(model: day)
+                    HourCellView(model: day)
                 }
                 .refreshable {
                     await presenter.reload()
+                }.onAppear {
+                    UIRefreshControl.appearance().tintColor = UIColor(Color.accentColor)
+                    UIRefreshControl.appearance().attributedTitle = try? NSAttributedString(markdown: "refreshing")
                 }
+                .navigationBarTitle("Hourly")
+                .tint(.accentColor)
             }
         }
-        .navigationBarTitle("Days")
-        .tint(.accentColor)
+        
         .navigationViewStyle(.stack)
         
     }
