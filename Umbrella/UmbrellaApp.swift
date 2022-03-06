@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct UmbrellaApp: App {
-    init() {
-    }
     
     var body: some Scene {
         WindowGroup {
-           
+            // DaysListView()
         }
     }
 }
