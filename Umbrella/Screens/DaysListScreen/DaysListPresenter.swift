@@ -15,22 +15,22 @@ protocol DaysListPresenter: ObservableObject {
     func reload() async
 }
 
+
 final class ListPresenterImp: DaysListPresenter {
     @Published var state: DaysListViewState = .idle
 
     func load() {
         state = .loading
-
-        Task {
-            await loadData()
-        }
+        loadData()
     }
 
     func reload() async {
-        await loadData()
+        loadData()
     }
 
-    private func loadData() async {
-        
+    private func loadData() {
+        /*Task {
+            await loadData()
+        }*/
     }
 }

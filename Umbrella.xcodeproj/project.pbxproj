@@ -19,6 +19,9 @@
 		FE2EF8F327D51C3800EFEA40 /* DayCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF8F227D51C3800EFEA40 /* DayCellViewModel.swift */; };
 		FE2EF8F827D52BA100EFEA40 /* DaysListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF8F727D52BA100EFEA40 /* DaysListPresenter.swift */; };
 		FE2EF8FA27D52D6900EFEA40 /* DaysListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF8F927D52D6900EFEA40 /* DaysListViewState.swift */; };
+		FE2EF90127D5509200EFEA40 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90027D5509200EFEA40 /* WeatherRepository.swift */; };
+		FE2EF90327D550D700EFEA40 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90227D550D700EFEA40 /* ApiConfiguration.swift */; };
+		FE2EF90627D5528B00EFEA40 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90527D5528B00EFEA40 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		FE2EF8F227D51C3800EFEA40 /* DayCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellViewModel.swift; sourceTree = "<group>"; };
 		FE2EF8F727D52BA100EFEA40 /* DaysListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysListPresenter.swift; sourceTree = "<group>"; };
 		FE2EF8F927D52D6900EFEA40 /* DaysListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysListViewState.swift; sourceTree = "<group>"; };
+		FE2EF90027D5509200EFEA40 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		FE2EF90227D550D700EFEA40 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		FE2EF90527D5528B00EFEA40 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 		FE2EF8EB27D5121A00EFEA40 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				FE2EF90427D5526900EFEA40 /* WeatherRequest */,
+				FE2EF90227D550D700EFEA40 /* ApiConfiguration.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -180,6 +188,15 @@
 				FE2EF8F227D51C3800EFEA40 /* DayCellViewModel.swift */,
 			);
 			path = DayCell;
+			sourceTree = "<group>";
+		};
+		FE2EF90427D5526900EFEA40 /* WeatherRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EF90027D5509200EFEA40 /* WeatherRepository.swift */,
+				FE2EF90527D5528B00EFEA40 /* WeatherResponse.swift */,
+			);
+			path = WeatherRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,9 +332,12 @@
 			files = (
 				FE2EF8F327D51C3800EFEA40 /* DayCellViewModel.swift in Sources */,
 				FE2EF8FA27D52D6900EFEA40 /* DaysListViewState.swift in Sources */,
+				FE2EF90327D550D700EFEA40 /* ApiConfiguration.swift in Sources */,
+				FE2EF90127D5509200EFEA40 /* WeatherRepository.swift in Sources */,
 				FE2EF8F827D52BA100EFEA40 /* DaysListPresenter.swift in Sources */,
 				FE2EF8EE27D5187600EFEA40 /* DaysListView.swift in Sources */,
 				FE2EF8F127D51ADD00EFEA40 /* DayCellView.swift in Sources */,
+				FE2EF90627D5528B00EFEA40 /* WeatherResponse.swift in Sources */,
 				FE2EF8BE27D5059100EFEA40 /* UmbrellaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
