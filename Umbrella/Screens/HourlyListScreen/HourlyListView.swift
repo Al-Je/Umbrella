@@ -28,7 +28,7 @@ struct HourlyListView<T>: View where T: HourlyListPresenter {
                     .tint(.accentColor)
                 
             case .error(let error):
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     Image(systemName: "arrow.clockwise")
                     Text(error.localizedDescription)
                 }.onTapGesture {
@@ -54,10 +54,13 @@ struct HourlyListView<T>: View where T: HourlyListPresenter {
         
     }
 }
-/*
+
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        DaysListView()
+        HourlyListView(presenter: MockLoadingHourlyListPresenter())
+        HourlyListView(presenter: MockErrorHourlyListPresenter())
+        HourlyListView(presenter: MockContentHourlyListPresenter())
     }
 }
-*/
+
+

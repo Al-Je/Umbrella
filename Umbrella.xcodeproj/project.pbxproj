@@ -23,6 +23,7 @@
 		FE2EF90327D550D700EFEA40 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90227D550D700EFEA40 /* ApiConfiguration.swift */; };
 		FE2EF90627D5528B00EFEA40 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90527D5528B00EFEA40 /* WeatherResponse.swift */; };
 		FE2EF90827D56B2700EFEA40 /* ScreensInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90727D56B2700EFEA40 /* ScreensInjection.swift */; };
+		FE2EF90A27D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90927D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		FE2EF90227D550D700EFEA40 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		FE2EF90527D5528B00EFEA40 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		FE2EF90727D56B2700EFEA40 /* ScreensInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensInjection.swift; sourceTree = "<group>"; };
+		FE2EF90927D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMockHourlyPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				FE2EF8ED27D5187600EFEA40 /* HourlyListView.swift */,
 				FE2EF8F727D52BA100EFEA40 /* HourlyListPresenter.swift */,
 				FE2EF8F927D52D6900EFEA40 /* HourlyListViewState.swift */,
+				FE2EF90927D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift */,
 			);
 			path = HourlyListScreen;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				FE2EF90827D56B2700EFEA40 /* ScreensInjection.swift in Sources */,
 				FE2EF90627D5528B00EFEA40 /* WeatherResponse.swift in Sources */,
 				FE2EF8BE27D5059100EFEA40 /* UmbrellaApp.swift in Sources */,
+				FE2EF90A27D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
