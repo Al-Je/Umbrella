@@ -8,9 +8,16 @@
 import Foundation
 
 enum ScreensInjection {
-    static func generateDaysListView() -> HourlyListView<HourlyListPresenterAsyncImp> {
+    static func generateHourlyListViewWithAsync() -> HourlyListView<HourlyListPresenterAsyncImp> {
         let repository = WeatherRepositoryAsyncImp()
         let presenter = HourlyListPresenterAsyncImp(asyncRepository: repository)
+        let view = HourlyListView(presenter: presenter)
+        return view
+    }
+    
+    static func generateHourlyListViewWithCombine() -> HourlyListView<HourlyListPresenterCombineImp> {
+        let repository = WeatherRepositoryCombineImp()
+        let presenter = HourlyListPresenterCombineImp(combineRepository: repository)
         let view = HourlyListView(presenter: presenter)
         return view
     }

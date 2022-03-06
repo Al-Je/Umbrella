@@ -12,7 +12,8 @@ struct UmbrellaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ScreensInjection.generateDaysListView()
+            ScreensInjection.generateHourlyListViewWithAsync()
+            // ScreensInjection.generateHourlyListViewWithCombine()
         }
     }
 }
