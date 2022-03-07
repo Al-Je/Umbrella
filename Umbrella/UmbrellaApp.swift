@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let useCombine = false
+
 @main
 struct UmbrellaApp: App {
     init() {
@@ -15,8 +17,11 @@ struct UmbrellaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ScreensInjection.generateHourlyListViewWithAsync()
-            // ScreensInjection.generateHourlyListViewWithCombine()
+            if useCombine {
+                ScreensInjection.generateHourlyListViewWithCombine()
+            } else {
+                ScreensInjection.generateHourlyListViewWithAsync()
+            }
         }
     }
     
