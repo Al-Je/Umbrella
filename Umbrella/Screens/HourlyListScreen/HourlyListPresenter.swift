@@ -5,7 +5,7 @@
 //  Created by Alexandre Jegouic on 06/03/2022.
 //
 
-import SwiftUI
+import Foundation
 import Combine
 
 protocol HourlyListPresenter: ObservableObject {
@@ -54,7 +54,8 @@ final class HourlyListPresenterAsyncImp: HourlyListPresenter {
                 return HourCellViewModel(
                     imageURl: Api.Icon.url(name: mainWeatherDesc.icon),
                     title: title,
-                    subtitle: mainWeatherDesc.description
+                    subtitle: mainWeatherDesc.description,
+                    detailDatas: weatherData
                 )
             }
             self.state = .show(items: items)
@@ -100,7 +101,7 @@ final class HourlyListPresenterCombineImp: HourlyListPresenter {
                 }
                 .catch { error in
                     Just(HourlyListViewState.error(error))
-                } // LoadingState
+                }
                 .receive(on: DispatchQueue.main)
                 .assign(to: &$state)
         } catch {
@@ -118,7 +119,8 @@ final class HourlyListPresenterCombineImp: HourlyListPresenter {
             return HourCellViewModel(
                 imageURl: Api.Icon.url(name: mainWeatherDesc.icon),
                 title: title,
-                subtitle: mainWeatherDesc.description
+                subtitle: mainWeatherDesc.description,
+                detailDatas: weatherData
             )
         }
     }

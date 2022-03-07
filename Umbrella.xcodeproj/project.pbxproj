@@ -26,6 +26,11 @@
 		FE2EF90A27D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90927D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift */; };
 		FE2EF90E27D5838000EFEA40 /* MockWeatherRepositoryAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF90D27D5838000EFEA40 /* MockWeatherRepositoryAsync.swift */; };
 		FE2EF91027D5847800EFEA40 /* WeatherResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = FE2EF90F27D5847800EFEA40 /* WeatherResponse.json */; };
+		FE2EF91227D58EB600EFEA40 /* HourDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF91127D58EB600EFEA40 /* HourDetailsView.swift */; };
+		FE2EF91427D58FE500EFEA40 /* HourDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF91327D58FE500EFEA40 /* HourDetailsPresenter.swift */; };
+		FE2EF91627D591EB00EFEA40 /* HourDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF91527D591EB00EFEA40 /* HourDetailsModel.swift */; };
+		FE2EF91827D5930B00EFEA40 /* HourOneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF91727D5930B00EFEA40 /* HourOneDetailView.swift */; };
+		FE2EF91B27D59CC400EFEA40 /* PreviewMockHourDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2EF91A27D59CC400EFEA40 /* PreviewMockHourDetailsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		FE2EF90927D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMockHourlyPresenter.swift; sourceTree = "<group>"; };
 		FE2EF90D27D5838000EFEA40 /* MockWeatherRepositoryAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherRepositoryAsync.swift; sourceTree = "<group>"; };
 		FE2EF90F27D5847800EFEA40 /* WeatherResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WeatherResponse.json; sourceTree = "<group>"; };
+		FE2EF91127D58EB600EFEA40 /* HourDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourDetailsView.swift; sourceTree = "<group>"; };
+		FE2EF91327D58FE500EFEA40 /* HourDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourDetailsPresenter.swift; sourceTree = "<group>"; };
+		FE2EF91527D591EB00EFEA40 /* HourDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourDetailsModel.swift; sourceTree = "<group>"; };
+		FE2EF91727D5930B00EFEA40 /* HourOneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourOneDetailView.swift; sourceTree = "<group>"; };
+		FE2EF91A27D59CC400EFEA40 /* PreviewMockHourDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMockHourDetailsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +224,11 @@
 		FE2EF90B27D5834400EFEA40 /* HourDetailsView */ = {
 			isa = PBXGroup;
 			children = (
+				FE2EF91927D5936F00EFEA40 /* HourDetailsSubView */,
+				FE2EF91127D58EB600EFEA40 /* HourDetailsView.swift */,
+				FE2EF91327D58FE500EFEA40 /* HourDetailsPresenter.swift */,
+				FE2EF91527D591EB00EFEA40 /* HourDetailsModel.swift */,
+				FE2EF91A27D59CC400EFEA40 /* PreviewMockHourDetailsPresenter.swift */,
 			);
 			path = HourDetailsView;
 			sourceTree = "<group>";
@@ -225,6 +240,14 @@
 				FE2EF90D27D5838000EFEA40 /* MockWeatherRepositoryAsync.swift */,
 			);
 			path = MockRepository;
+			sourceTree = "<group>";
+		};
+		FE2EF91927D5936F00EFEA40 /* HourDetailsSubView */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EF91727D5930B00EFEA40 /* HourOneDetailView.swift */,
+			);
+			path = HourDetailsSubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,13 +386,18 @@
 				FE2EF8FA27D52D6900EFEA40 /* HourlyListViewState.swift in Sources */,
 				FE2EF90327D550D700EFEA40 /* ApiConfiguration.swift in Sources */,
 				FE2EF90127D5509200EFEA40 /* WeatherRepository.swift in Sources */,
+				FE2EF91827D5930B00EFEA40 /* HourOneDetailView.swift in Sources */,
+				FE2EF91627D591EB00EFEA40 /* HourDetailsModel.swift in Sources */,
 				FE2EF8F827D52BA100EFEA40 /* HourlyListPresenter.swift in Sources */,
 				FE2EF8EE27D5187600EFEA40 /* HourlyListView.swift in Sources */,
+				FE2EF91B27D59CC400EFEA40 /* PreviewMockHourDetailsPresenter.swift in Sources */,
+				FE2EF91427D58FE500EFEA40 /* HourDetailsPresenter.swift in Sources */,
 				FE2EF8F127D51ADD00EFEA40 /* HourCellView.swift in Sources */,
 				FE2EF90827D56B2700EFEA40 /* ScreensInjection.swift in Sources */,
 				FE2EF90627D5528B00EFEA40 /* WeatherResponse.swift in Sources */,
 				FE2EF8BE27D5059100EFEA40 /* UmbrellaApp.swift in Sources */,
 				FE2EF90A27D57E1100EFEA40 /* PreviewMockHourlyPresenter.swift in Sources */,
+				FE2EF91227D58EB600EFEA40 /* HourDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

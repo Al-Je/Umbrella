@@ -12,4 +12,5 @@ struct HourCellViewModel: Identifiable {
     let imageURl: URL?
     let title: String
     let subtitle: String
+    let detailDatas: WeatherData
 }

@@ -36,8 +36,8 @@ struct HourlyListView<T>: View where T: HourlyListPresenter {
                 }
                 
             case .show(let items):
-                List(items) { day in
-                    HourCellView(model: day)
+                List(items) { hour in
+                    HourCellView(model: hour)
                 }
                 .refreshable {
                     await presenter.reload()

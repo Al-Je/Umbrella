@@ -13,12 +13,14 @@ enum Api {
         static let pathWeatherRequest = "https://api.openweathermap.org/data/2.5/onecall"
         static let lat = "48.856614"
         static let lon = "2.3522219"
+        static let units = "metric"
     }
     
     enum Params {
         static let lat = "lat"
         static let lon = "lon"
         static let apiKey = "appid"
+        static let units = "units"
     }
     
     enum Icon {
@@ -36,7 +38,8 @@ enum Api {
         components.queryItems = [
             URLQueryItem(name: Api.Params.lat, value: Api.Configuration.lat),
             URLQueryItem(name: Api.Params.lon, value: Api.Configuration.lon),
-            URLQueryItem(name: Api.Params.apiKey, value: Api.Configuration.apiKey)
+            URLQueryItem(name: Api.Params.apiKey, value: Api.Configuration.apiKey),
+            URLQueryItem(name: Api.Params.units, value: Api.Configuration.units)
         ]
         components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         return components.url

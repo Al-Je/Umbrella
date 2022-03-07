@@ -21,4 +21,10 @@ enum ScreensInjection {
         let view = HourlyListView(presenter: presenter)
         return view
     }
+    
+    static func generateHourDetailsView(weatherData: WeatherData) -> HourDetailsView<HourDetailsPresenterImp> {
+        let presenter = HourDetailsPresenterImp(weatherData: weatherData)
+        let view = HourDetailsView(presenter: presenter)
+        return view
+    }
 }
