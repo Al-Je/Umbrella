@@ -6,31 +6,55 @@
 //
 
 import XCTest
+import Combine
 @testable import Umbrella
 
-class UmbrellaTests: XCTestCase {
+final class UmbrellaTests: XCTestCase {
+    private var cancellables = Set<AnyCancellable>()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testWeatherResponseParsing() throws {
+        let response = WeatherResponseData.loadResponse()!
+        
+        XCTAssertEqual(response.hourly[0].dt, 1586390400)
+        XCTAssertEqual(response.hourly[0].temp, 278.41)
+        XCTAssertEqual(response.hourly[0].pressure, 1006)
+        XCTAssertEqual(response.hourly[0].windSpeed, 9.83)
+        XCTAssertEqual(response.hourly[0].weather[0].description, "clear sky")
+        XCTAssertEqual(response.hourly[0].weather[0].main, "Clear")
+        XCTAssertEqual(response.hourly[0].weather[0].icon, "01n")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testPresenterError() {
+        let presenter = HourlyListPresenterAsyncImp(asyncRepository: MockErrorWeatherRepositoryAsync())
+        presenter.load()
+        
+        let expectation = XCTestExpectation(description: "waiting state change")
+        
+        presenter.$state.dropFirst().sink { _ in
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        wait(for: [expectation], timeout: 1)
+        
+        if case .error = presenter.state {} else {
+            XCTFail("wrong state, we should have the error state ")
         }
     }
-
+    
+    func testPresenterDate() {
+        let presenter = HourlyListPresenterAsyncImp(asyncRepository: MockDataWeatherRepositoryAsync())
+        presenter.load()
+        
+        let expectation = XCTestExpectation(description: "waiting state change")
+        presenter.$state.dropFirst().sink { _ in
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        wait(for: [expectation], timeout: 1)
+        
+        if case .show(let items) = presenter.state {
+            XCTAssertEqual(items.count, 3)
+            XCTAssertEqual(items[0].subtitle, "clear sky")
+        } else {
+            XCTFail("wrong state, we should have the error state ")
+        }
+    }
 }
